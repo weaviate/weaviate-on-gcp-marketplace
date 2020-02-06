@@ -15,6 +15,32 @@ function main() {
   weaviate_target_repo="$target_repo_base/weaviate"
 
   repush "$weaviate_source_registry" "$weaviate_source_repo" "$weaviate_source_tag" "$weaviate_target_repo"
+
+  ## contextionary once for each language
+  languages="en nl"
+  for lang in $languages; do
+    c11y_source_registry=docker.io
+    c11y_source_tag="${lang}0.10.0-v0.4.7"
+    c11y_source_repo="semitechnologies/contextionary"
+    c11y_target_repo="$target_repo_base/weaviate-contextionary-${lang}"
+
+    repush "$c11y_source_registry" "$c11y_source_repo" "$c11y_source_tag" "$c11y_target_repo"
+  done
+
+  ## esvector
+  esvector_source_registry=docker.io
+  esvector_source_tag=7.1.0
+  esvector_source_repo=semitechnologies/esvector
+  esvector_target_repo="$target_repo_base/weaviate-esvector"
+
+  repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
+
+  esvector_source_registry=docker.io
+  esvector_source_tag=7.1.0
+  esvector_source_repo=bitnami/etcd
+  esvector_target_repo="$target_repo_base/weaviate-etcd"
+
+  repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
 }
 
 function repush() {
