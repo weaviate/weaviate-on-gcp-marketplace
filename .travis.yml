@@ -1,10 +1,22 @@
 dist: xenial
 language: shell
-
 jobs:
   include:
-
-    - stage: dev
-      env:
-        GCP_PROJECT: semi-marketplace-dev
-      script: ./push_images.sh
+  - stage: dev
+    env:
+      GCP_PROJECT: semi-marketplace-dev
+    script:
+    - openssl aes-256-cbc -K $encrypted_7d2533dde7d2_key -iv $encrypted_7d2533dde7d2_iv
+      -in sa-keyfile-dev.json.enc -out sa-keyfile.json -d
+    - gcloud auth activate-service-account --key-file sa-keyfile.json
+    - gcloud config set project $GCP_PROJECT
+    - "./push_images.sh"
+cache:
+  directories:
+  - "$HOME/google-cloud-sdk/"
+before_install:
+- gcloud version || true
+- if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export
+  CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+- source /home/travis/google-cloud-sdk/path.bash.inc
+- gcloud version
