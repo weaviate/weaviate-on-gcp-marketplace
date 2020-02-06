@@ -1,4 +1,6 @@
 dist: xenial
+language: shell
+
 jobs:
   include:
 
