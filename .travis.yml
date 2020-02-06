@@ -1,6 +1,7 @@
 dist: xenial
 jobs:
   include:
+
     - stage: dev
       env:
         GCP_PROJECT: semi-marketplace-dev

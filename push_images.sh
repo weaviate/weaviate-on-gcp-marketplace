@@ -36,7 +36,7 @@ function main() {
   repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
 
   esvector_source_registry=docker.io
-  esvector_source_tag=7.1.0
+  esvector_source_tag=3.3.13-debian-9-r30
   esvector_source_repo=bitnami/etcd
   esvector_target_repo="$target_repo_base/weaviate-etcd"
 
