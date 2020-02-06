@@ -9,6 +9,7 @@ jobs:
     - openssl aes-256-cbc -K $encrypted_7d2533dde7d2_key -iv $encrypted_7d2533dde7d2_iv
       -in sa-keyfile-dev.json.enc -out sa-keyfile.json -d
     - gcloud auth activate-service-account --key-file sa-keyfile.json
+    - gcloud auth configure-docker
     - gcloud config set project $GCP_PROJECT
     - "./push_images.sh"
 cache:
