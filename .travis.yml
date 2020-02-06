@@ -7,4 +7,4 @@ jobs:
     - stage: dev
       env:
         GCP_PROJECT: semi-marketplace-dev
-      script: push_images.sh
+      script: ./push_images.sh
