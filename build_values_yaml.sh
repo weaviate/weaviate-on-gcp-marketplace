@@ -2,4 +2,4 @@
 
 source versions.sh.inc
 
-envsubst < chart/values.yaml.presubs > chart/values.yaml
+envsubst < chart/weaviate-on-gke/values.yaml.presubs > chart/weaviate-on-gke/values.yaml

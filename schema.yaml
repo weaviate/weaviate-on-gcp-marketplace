@@ -2,7 +2,7 @@ applicationApiVersion: v1beta1
 
 x-google-marketplace:
   # IMPORTANT: These IDs must match your listing ID in Marketplace.
-  partnerId: semi
+  partnerId: semi-marketplace-public
   solutionId: weaviate-on-gke
 
 properties:

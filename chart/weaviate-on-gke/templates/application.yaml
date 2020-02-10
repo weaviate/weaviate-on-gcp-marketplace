@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: "{{ .Release.Name }}"
   annotations:
-    marketplace.cloud.google.com/deploy-info: '{"partner_id": "semi", "product_id": "weaviate-on-gke", "partner_name": "SeMI Technologies B.V."}'
+    marketplace.cloud.google.com/deploy-info: '{"partner_id": "semi-marketplace-public", "product_id": "weaviate-on-gke", "partner_name": "SeMI Technologies B.V."}'
 spec:
   descriptor:
     type: Weaviate

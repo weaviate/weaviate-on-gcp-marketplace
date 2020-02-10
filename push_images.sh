@@ -6,8 +6,7 @@ source versions.sh.inc
 
 # the target tag will be used for every image, as is required from gcp marketplace
 target_tag="$TARGET_VERSION"
-target_registry=gcr.io
-target_repo_base="$GCP_PROJECT/weaviate-on-gke"
+target_repo_base="$TARGET_REPO_BASE"
 
 function main() {
   ## weaviate image
@@ -54,7 +53,7 @@ function repush() {
   local t_repo="${4}"
 
   local source="$s_registry/$s_repo:$s_tag"
-  local target="$target_registry/$t_repo:$target_tag"
+  local target="$t_repo:$target_tag"
 
   docker pull "$source"
   docker tag "$source" "$target"
