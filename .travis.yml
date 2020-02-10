@@ -7,8 +7,8 @@ jobs:
       GCP_PROJECT: semi-marketplace-dev
     script:
     - openssl aes-256-cbc -K $encrypted_7d2533dde7d2_key -iv $encrypted_7d2533dde7d2_iv
-      -in sa-keyfile-dev.json.enc -out sa-keyfile.json -d
-    - gcloud auth activate-service-account --key-file sa-keyfile.json
+      -in sa-keyfile-dev.json.enc -out sa-keyfile-dev.json -d
+    - gcloud auth activate-service-account --key-file sa-keyfile-dev.json
     - gcloud auth configure-docker --quiet
     - gcloud config set project $GCP_PROJECT
     - "./push_images.sh"
@@ -17,8 +17,8 @@ jobs:
       GCP_PROJECT: semi-marketplace-public
     script:
     - openssl aes-256-cbc -K $encrypted_7d2533dde7d2_key -iv $encrypted_7d2533dde7d2_iv
-      -in sa-keyfile-public.json.enc -out sa-keyfile.json -d
-    - gcloud auth activate-service-account --key-file sa-keyfile.json
+      -in sa-keyfile-public.json.enc -out sa-keyfile-dev.json -d
+    - gcloud auth activate-service-account --key-file sa-keyfile-dev.json
     - gcloud auth configure-docker --quiet
     - gcloud config set project $GCP_PROJECT
     - "./push_images.sh"
