@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
+source versions.sh.inc
+
 # the target tag will be used for every image, as is required from gcp marketplace
-target_tag=0.22.1
+target_tag="$TARGET_VERSION"
 target_registry=gcr.io
 target_repo_base="$GCP_PROJECT/weaviate-on-gke"
 
