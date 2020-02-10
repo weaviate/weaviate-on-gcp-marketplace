@@ -1,1 +1,4 @@
 Version: "0.22.1"
+weaviate:
+  elasticsearch:
+    clusterName: esvector

@@ -1,1 +1,4 @@
 Version: "${TARGET_VERSION}"
+weaviate:
+  elasticsearch:
+    clusterName: esvector
