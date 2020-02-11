@@ -7,15 +7,23 @@ jobs:
     env:
       GCP_PROJECT: semi-marketplace-dev
     script:
+    - "set -e"
     - "./login_gcp.sh sa-keyfile-dev.json"
     - "./push_images.sh"
+    - "./download_weaviate_chart.sh"
+    - "./build_values_yaml.sh"
+    - "./build_deployer.sh"
 
   - stage: public
     env:
       GCP_PROJECT: semi-marketplace-public
     script:
+    - "set -e"
     - "./login_gcp.sh sa-keyfile-public.json"
     - "./push_images.sh"
+    - "./download_weaviate_chart.sh"
+    - "./build_values_yaml.sh"
+    - "./build_deployer.sh"
 
 cache:
   directories:
