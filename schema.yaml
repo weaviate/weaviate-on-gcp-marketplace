@@ -4,6 +4,50 @@ x-google-marketplace:
   # IMPORTANT: These IDs must match your listing ID in Marketplace.
   partnerId: semi-marketplace-public
   solutionId: weaviate-on-gke
+  schemaVersion: v2
+  applicationApiVersion: v1beta1
+  publishedVersion: '0.22.1'
+  publishedVersionMetadata:
+    releaseTypes:
+      - Feature
+    recommended: false
+    releaseNote: >-
+      See https://github.com/semi-technologies/weaviate/releases/tag/0.22.1 for full release notes.
+
+  managedUpdates:
+    kalmSupported: true
+
+  images:
+    '':
+      properties:
+        weaviate.image.repo:
+          type: REPO_WITHOUT_REGISTRY
+        weaviate.image.registry:
+          type: REGISTRY
+        weaviate.image.tag:
+          type: TAG
+    contextionary-en:
+      properties:
+        contextionary.image.repo:
+          type: REPO_WITHOUT_REGISTRY
+        contextionary.image.registry:
+          type: REGISTRY
+        contextionary.image.tag:
+          type: TAG
+    etcd:
+      properties:
+        etcd.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        etcd.image.registry:
+          type: REGISTRY
+        etcd.image.tag:
+          type: TAG
+    esvector:
+      properties:
+        elasticsearch.image:
+          type: REPO_WITH_REGISTRY
+        elasticsearch.imageTag:
+          type: TAG
 
 properties:
   name:
@@ -18,3 +62,4 @@ properties:
 required:
 - name
 - namespace
+
