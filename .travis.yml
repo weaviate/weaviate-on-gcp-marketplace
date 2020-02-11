@@ -2,25 +2,25 @@ dist: xenial
 language: shell
 jobs:
   include:
+
   - stage: dev
     env:
       GCP_PROJECT: semi-marketplace-dev
     script:
-    - gcloud auth activate-service-account --key-file sa-keyfile-dev.json
-    - gcloud auth configure-docker --quiet
-    - gcloud config set project $GCP_PROJECT
+    - "./login_gcp.sh sa-keyfile-dev.json"
     - "./push_images.sh"
+
   - stage: public
     env:
       GCP_PROJECT: semi-marketplace-public
     script:
-    - gcloud auth activate-service-account --key-file sa-keyfile-public.json
-    - gcloud auth configure-docker --quiet
-    - gcloud config set project $GCP_PROJECT
+    - "./login_gcp.sh sa-keyfile-public.json"
     - "./push_images.sh"
+
 cache:
   directories:
   - "$HOME/google-cloud-sdk/"
+
 before_install:
 - gcloud version || true
 - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export
