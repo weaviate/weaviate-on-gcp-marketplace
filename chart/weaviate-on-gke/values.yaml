@@ -1,4 +1,12 @@
-Version: "0.22.1"
+Version: "0.22"
 weaviate:
+  image:
+    repo: "semi-marketplace-dev/weaviate-on-gke"
+    tag: "0.22"
+    registry: "gcr.io"
+  contextionary:
+    repo: "semi-marketplace-dev/weaviate-on-gke/contextionary-en"
+    tag: "0.22"
+    registry: "gcr.io"
   elasticsearch:
     clusterName: esvector

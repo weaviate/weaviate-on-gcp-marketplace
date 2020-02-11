@@ -1,4 +1,12 @@
 Version: "${TARGET_VERSION}"
 weaviate:
+  image:
+    repo: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}"
+    tag: "${TARGET_VERSION}"
+    registry: "${TARGET_REGISTRY}"
+  contextionary:
+    repo: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}/contextionary-en"
+    tag: "${TARGET_VERSION}"
+    registry: "${TARGET_REGISTRY}"
   elasticsearch:
     clusterName: esvector
