@@ -1,12 +1,24 @@
 Version: "${TARGET_VERSION}"
+
 weaviate:
+
   image:
     repo: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}"
     tag: "${TARGET_VERSION}"
     registry: "${TARGET_REGISTRY}"
+
   contextionary:
     repo: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}/contextionary-en"
     tag: "${TARGET_VERSION}"
     registry: "${TARGET_REGISTRY}"
+
   elasticsearch:
     clusterName: esvector
+    image: "${TARGET_REPO_BASE}/esvector"
+    imageTag: "${TARGET_VERSION}"
+
+  etcd:
+    image:
+      registry: "${TARGET_REGISTRY}"
+      repository: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}/etcd"
+      tag: "${TARGET_VERSION}"
