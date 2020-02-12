@@ -5,7 +5,7 @@ set -euo pipefail
 source versions.sh.inc
 
 # the target tag will be used for every image, as is required from gcp marketplace
-target_tag="$TARGET_VERSION"
+target_tag="$TARGET_IMAGE_VERSION"
 target_repo_base="$TARGET_REPO_BASE"
 
 function main() {
