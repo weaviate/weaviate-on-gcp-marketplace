@@ -6,6 +6,7 @@ source versions.sh.inc
 
 # the target tag will be used for every image, as is required from gcp marketplace
 target_tag="$TARGET_IMAGE_VERSION"
+target_tag_full="$TARGET_VERSION"
 target_repo_base="$TARGET_REPO_BASE"
 
 function main() {
@@ -54,10 +55,13 @@ function repush() {
 
   local source="$s_registry/$s_repo:$s_tag"
   local target="$t_repo:$target_tag"
+  local target_full="$t_repo:$target_tag_full"
 
   docker pull "$source"
   docker tag "$source" "$target"
+  docker tag "$source" "$target_full"
   docker push "$target"
+  docker push "$target_full"
 }
 
 main "$@"
