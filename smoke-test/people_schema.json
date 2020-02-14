@@ -1,0 +1,91 @@
+{
+  "actions": {
+    "classes": [],
+    "type": "action"
+  },
+  "things": {
+    "@context": "",
+    "version": "0.2.0",
+    "type": "thing",
+    "name": "people",
+    "maintainer": "yourfriends@weaviate.com",
+    "classes": [
+      {
+        "class": "Person",
+        "description": "A person such as humans or personality known through culture",
+        "keywords": [],
+        "properties": [
+          {
+            "name": "name",
+            "description": "The name of this person",
+            "dataType": [
+              "text"
+            ],
+            "cardinality": "atMostOne",
+            "keywords": []
+          }
+        ]
+      },
+      {
+        "class": "Group",
+        "description": "A set of persons who are associated with each other over some common properties",
+        "keywords": [],
+        "properties": [
+          {
+            "name": "name",
+            "description": "The name under which this group is known",
+            "dataType": [
+              "text"
+            ],
+            "cardinality": "atMostOne",
+            "keywords": []
+          },
+          {
+            "name": "members",
+            "description": "The persons that are part of this group",
+            "dataType": [
+              "Person"
+            ],
+            "cardinality": "many"
+          }
+        ]
+      },
+      {
+        "class": "Association",
+        "description": "A legal body that consists of a set of juristic persons. All juristic persons in a group are deliberate members.",
+        "keywords": [],
+        "vectorizeClassName": false,
+        "properties": [
+          {
+            "name": "name",
+            "description": "The name of the association",
+            "dataType": [
+              "text"
+            ],
+            "cardinality": "atMostOne",
+            "keywords": []
+          },
+          {
+            "name": "members",
+            "description": "The juristic persons that are part of this association",
+            "dataType": [
+              "Person", "Association"
+            ],
+            "cardinality": "many",
+            "vectorizePropertyName": true
+          },
+          {
+            "name": "RegistrationId",
+            "description": "The id under which the association is legally registered",
+            "dataType": [
+              "string"
+            ],
+            "cardinality": "atMostOne",
+            "vectorizePropertyName": false,
+            "index": false
+          }
+        ]
+      }
+    ]
+  }
+}
