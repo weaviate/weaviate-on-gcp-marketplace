@@ -17,3 +17,9 @@ spec:
   componentKinds:
   - group: batch/v1
     kind: Job
+  - group: apps/v1beta1
+    kind: StatefulSet
+  - group: apps/v1beta1
+    kind: Deployment
+  - group: v1
+    kind: PersistentVolumeClaim
