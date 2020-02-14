@@ -23,3 +23,5 @@ spec:
     kind: Deployment
   - group: v1
     kind: PersistentVolumeClaim
+  - group: v1
+    kind: Service
