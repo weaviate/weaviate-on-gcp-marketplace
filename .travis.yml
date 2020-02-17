@@ -30,7 +30,6 @@ cache:
   - "$HOME/google-cloud-sdk/"
   - docker_images
 
-
 before_install:
 - gcloud version || true
 - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export
