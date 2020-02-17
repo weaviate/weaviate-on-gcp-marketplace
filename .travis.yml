@@ -13,6 +13,8 @@ jobs:
     - "./download_weaviate_chart.sh"
     - "./build_values_yaml.sh"
     - "./build_deployer.sh"
+    - "./journey_test.sh"
+    - "./delete_all_clusters.sh"
 
   - stage: public
     env:
@@ -39,3 +41,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_7d2533dde7d2_key -iv $encrypted_7d2533dde7d2_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar -xf secrets.tar
+
+after_failure:
+- "./delete_all_clusters.sh"
