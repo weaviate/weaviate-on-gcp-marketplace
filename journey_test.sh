@@ -13,5 +13,11 @@ gcloud container clusters get-credentials "test-$cluster_id" --zone=europe-west3
 
 kubectl apply -f "https://raw.githubusercontent.com/GoogleCloudPlatform/marketplace-k8s-app-tools/master/crd/app-crd.yaml"
 
-mpdev verify "--deployer=gcr.io/semi-marketplace-dev/weaviate-on-gke/deployer:$TARGET_VERSION"
+# install mpedev
+docker run \
+  gcr.io/cloud-marketplace-tools/k8s/dev \
+  cat /scripts/dev > mpdev
+chmod +x "mpdev"
+
+./mpdev verify "--deployer=gcr.io/semi-marketplace-dev/weaviate-on-gke/deployer:$TARGET_VERSION"
 
