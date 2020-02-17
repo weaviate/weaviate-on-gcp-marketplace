@@ -7,23 +7,23 @@ jobs:
     env:
       GCP_PROJECT: semi-marketplace-dev
     script:
-    - "./login_gcp.sh sa-keyfile-dev.json" || travis_terminate 1
-    - "./push_images.sh" || travis_terminate 1
-    - "./download_weaviate_chart.sh" || travis_terminate 1
-    - "./build_values_yaml.sh" || travis_terminate 1
-    - "./build_deployer.sh" || travis_terminate 1
-    - "./journey_test.sh" || travis_terminate 1
-    - "./delete_all_clusters.sh" || travis_terminate 1
+    - "./login_gcp.sh sa-keyfile-dev.json || travis_terminate 1"
+    - "./push_images.sh || travis_terminate 1"
+    - "./download_weaviate_chart.sh || travis_terminate 1"
+    - "./build_values_yaml.sh || travis_terminate 1"
+    - "./build_deployer.sh || travis_terminate 1"
+    - "./journey_test.sh || travis_terminate 1"
+    - "./delete_all_clusters.sh || travis_terminate 1"
 
   - stage: public
     env:
       GCP_PROJECT: semi-marketplace-public
     script:
-    - "./login_gcp.sh sa-keyfile-public.json" || travis_terminate 1
-    - "./push_images.sh" || travis_terminate 1
-    - "./download_weaviate_chart.sh" || travis_terminate 1
-    - "./build_values_yaml.sh" || travis_terminate 1
-    - "./build_deployer.sh" || travis_terminate 1
+    - "./login_gcp.sh sa-keyfile-public.json || travis_terminate 1"
+    - "./push_images.sh || travis_terminate 1"
+    - "./download_weaviate_chart.sh || travis_terminate 1"
+    - "./build_values_yaml.sh || travis_terminate 1"
+    - "./build_deployer.sh || travis_terminate 1"
 
 cache:
   directories:
