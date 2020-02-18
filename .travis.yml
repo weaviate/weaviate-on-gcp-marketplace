@@ -29,7 +29,6 @@ jobs:
 cache:
   directories:
   - "$HOME/google-cloud-sdk/"
-  - docker_images
 
 before_install:
 - gcloud version || true
@@ -41,10 +40,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_7d2533dde7d2_key -iv $encrypted_7d2533dde7d2_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar -xf secrets.tar
-- docker load -i docker_images/images.tar || true
 
 after_failure:
 - "./delete_all_clusters.sh"
-
-before_cache:
-- docker save -o docker_images/images.tar $(docker images -a -q)
