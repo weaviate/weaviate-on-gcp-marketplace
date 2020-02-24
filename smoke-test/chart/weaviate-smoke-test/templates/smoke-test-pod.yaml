@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ .Release.Name }}-smoke-test"
+  annotations:
+    marketplace.cloud.google.com/verification: test
+spec:
+  containers:
+    - name: test
+      image: '{{ .Values.image.registry }}/{{ .Values.image.repo }}:{{ .Values.image.tag }}'
+      env:
+        - name: WEAVIATE_ORIGIN
+          value: http://weaviate
+
+  restartPolicy: Never

@@ -43,6 +43,8 @@ function main() {
   esvector_target_repo="$target_repo_base/etcd"
 
   repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
+
+  build_and_push_smoke_tests
 }
 
 function repush() {
@@ -62,6 +64,14 @@ function repush() {
   docker tag "$source" "$target_full"
   docker push "$target"
   docker push "$target_full"
+}
+
+function build_and_push_smoke_tests() {
+  test_image_full="$target_repo_base/smoketest:$target_tag_full"
+  test_image="$target_repo_base/smoketest:$target_tag"
+  ( cd smoke-test/ && docker build -t "$test_image" -t "$test_image_full" .)
+  docker push "$test_image"
+  docker push "$test_image_full"
 }
 
 main "$@"

@@ -1,0 +1,4 @@
+image:
+  registry: overwrite_me
+  repository: overwrite_me
+  tag: overwrite_me

@@ -1,0 +1,23 @@
+applicationApiVersion: v1beta1
+
+x-google-marketplace:
+  schemaVersion: v2
+  images:
+    smoketest:
+      properties:
+        image.repo:
+          type: REPO_WITHOUT_REGISTRY
+        image.registry:
+          type: REGISTRY
+        image.tag:
+          type: TAG
+
+properties:
+  name:
+    type: string
+    x-google-marketplace:
+      type: NAME
+  namespace:
+    type: string
+    x-google-marketplace:
+      type: NAMESPACE
