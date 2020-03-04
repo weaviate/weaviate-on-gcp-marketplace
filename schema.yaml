@@ -28,25 +28,25 @@ x-google-marketplace:
           type: TAG
     contextionary-en:
       properties:
-        contextionary.image.repo:
+        weaviate.contextionary.repo:
           type: REPO_WITHOUT_REGISTRY
-        contextionary.image.registry:
+        weaviate.contextionary.registry:
           type: REGISTRY
-        contextionary.image.tag:
+        weaviate.contextionary.tag:
           type: TAG
     etcd:
       properties:
-        etcd.image.repository:
+        weaviate.etcd.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        etcd.image.registry:
+        weaviate.etcd.image.registry:
           type: REGISTRY
-        etcd.image.tag:
+        weaviate.etcd.image.tag:
           type: TAG
     esvector:
       properties:
-        elasticsearch.image:
+        weaviate.elasticsearch.image:
           type: REPO_WITH_REGISTRY
-        elasticsearch.imageTag:
+        weaviate.elasticsearch.imageTag:
           type: TAG
 
 properties:

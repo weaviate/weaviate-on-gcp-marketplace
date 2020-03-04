@@ -3,22 +3,22 @@ Version: "${TARGET_VERSION}"
 weaviate:
 
   image:
-    repo: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}"
-    tag: "${TARGET_IMAGE_VERSION}"
-    registry: "${TARGET_REGISTRY}"
+    repo: "overwrite_me"
+    tag: "overwrite_me"
+    registry: "overwrite_me"
 
   contextionary:
-    repo: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}/contextionary-en"
-    tag: "${TARGET_IMAGE_VERSION}"
-    registry: "${TARGET_REGISTRY}"
+    repo: "overwrite_me"
+    tag: "overwrite_me"
+    registry: "overwrite_me"
 
   elasticsearch:
     clusterName: esvector
-    image: "${TARGET_REPO_BASE}/esvector"
-    imageTag: "${TARGET_IMAGE_VERSION}"
+    image: "overwrite_me"
+    imageTag: "overwrite_me"
 
   etcd:
     image:
-      registry: "${TARGET_REGISTRY}"
-      repository: "${TARGET_REPO_BASE_WITHOUT_REGISTRY}/etcd"
-      tag: "${TARGET_IMAGE_VERSION}"
+      registry: "gcr.io"
+      repository: "overwrite_me"
+      tag: "overwrite_me"
