@@ -19,5 +19,5 @@ docker run \
   cat /scripts/dev > mpdev
 chmod +x "mpdev"
 
-./mpdev verify "--deployer=gcr.io/semi-marketplace-dev/weaviate-enterprise/deployer:$TARGET_VERSION"
+./mpdev verify "--deployer=gcr.io/semi-marketplace-dev/weaviate-on-gke/deployer:$TARGET_VERSION"
 
