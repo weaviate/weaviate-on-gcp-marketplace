@@ -12,8 +12,8 @@ jobs:
     - "./download_weaviate_chart.sh || travis_terminate 1"
     - "./build_values_yaml.sh || travis_terminate 1"
     - "./build_deployer.sh || travis_terminate 1"
-    - "./journey_test.sh || travis_terminate 1"
-    - "./delete_all_clusters.sh || travis_terminate 1"
+    # - "./journey_test.sh || travis_terminate 1"
+    # - "./delete_all_clusters.sh || travis_terminate 1"
 
   - stage: public
     env:
