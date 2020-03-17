@@ -3,7 +3,7 @@
 source versions.sh.inc
 
 export REGISTRY=gcr.io/$GCP_PROJECT
-export APP_NAME=weaviate-on-gke
+export APP_NAME=weaviate-enterprise
 docker build \
   --tag "$TARGET_REPO_BASE/deployer" \
   --tag "$TARGET_REPO_BASE/deployer:$TARGET_VERSION" \
