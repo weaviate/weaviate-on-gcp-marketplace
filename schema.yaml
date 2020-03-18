@@ -58,6 +58,12 @@ properties:
     type: string
     x-google-marketplace:
       type: NAMESPACE
+  contextionaryLanguage:
+    type: string
+    title: Contextionary Language
+    description: "Weaviate comes with a pre-trained ML-model to build the vector space called the \"contextionary\". The contextionary is language-specific."
+    enum:
+    - 'English'
 
 required:
 - name
