@@ -22,3 +22,8 @@ weaviate:
       registry: "gcr.io"
       repository: "overwrite_me"
       tag: "overwrite_me"
+
+  marketplace:
+    ubbagentImage: "overwrite_me"
+    reportingSecretName: "overwrite_me"
+

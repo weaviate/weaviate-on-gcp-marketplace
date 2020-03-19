@@ -15,7 +15,7 @@ x-google-marketplace:
       See https://github.com/semi-technologies/weaviate/releases/tag/0.22.1 for full release notes.
 
   managedUpdates:
-    kalmSupported: true
+    kalmSupported: false
 
   images:
     '':
@@ -48,6 +48,11 @@ x-google-marketplace:
           type: REPO_WITH_REGISTRY
         weaviate.elasticsearch.imageTag:
           type: TAG
+    ubbagent:
+      properties:
+        weaviate.marketplace.ubbagentImage:
+          type: FULL
+
 
 properties:
   name:
@@ -58,13 +63,9 @@ properties:
     type: string
     x-google-marketplace:
       type: NAMESPACE
-  weaviate.marketplace.ubbagentImage:
-    type: string
-    default: $REGISTRY/ubbagent:$TAG
-    x-google-marketplace:
-      type: IMAGE
   weaviate.marketplace.reportingSecretName:
     type: string
+    default: dummysecret
     x-google-marketplace:
       type: REPORTING_SECRET
   contextionaryLanguage:
@@ -77,4 +78,4 @@ properties:
 required:
 - name
 - namespace
-
+- contextionaryLanguage
