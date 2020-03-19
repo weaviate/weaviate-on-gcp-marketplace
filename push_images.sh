@@ -19,10 +19,10 @@ function main() {
   repush "$weaviate_source_registry" "$weaviate_source_repo" "$weaviate_source_tag" "$weaviate_target_repo"
 
   ## contextionary once for each language
-  languages="en nl"
+  languages="en nl de it cs"
   for lang in $languages; do
     c11y_source_registry=docker.io
-    c11y_source_tag="${lang}0.10.0-v0.4.7"
+    c11y_source_tag="${lang}0.13.0-v0.4.7"
     c11y_source_repo="semitechnologies/contextionary"
     c11y_target_repo="$target_repo_base/contextionary-${lang}"
 
