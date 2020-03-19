@@ -44,6 +44,13 @@ function main() {
 
   repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
 
+  esvector_source_registry=docker.io
+  esvector_source_tag=latest
+  esvector_source_repo=semitechnologies/gcp-ubbagent
+  esvector_target_repo="$target_repo_base/ubbagent"
+
+  repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
+
   build_and_push_smoke_tests
 }
 
