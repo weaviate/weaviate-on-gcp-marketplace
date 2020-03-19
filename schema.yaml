@@ -58,6 +58,15 @@ properties:
     type: string
     x-google-marketplace:
       type: NAMESPACE
+  weaviate.marketplace.ubbagentImage:
+    type: string
+    default: $REGISTRY/ubbagent:$TAG
+    x-google-marketplace:
+      type: IMAGE
+  weaviate.marketplace.reportingSecretName:
+    type: string
+    x-google-marketplace:
+      type: REPORTING_SECRET
   contextionaryLanguage:
     type: string
     title: Contextionary Language
