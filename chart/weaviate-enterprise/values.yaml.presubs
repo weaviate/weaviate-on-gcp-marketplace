@@ -26,4 +26,5 @@ weaviate:
   marketplace:
     ubbagentImage: "overwrite_me"
     reportingSecretName: "overwrite_me"
+    serviceName: weaviate-enterprise.mp-semi-marketplace-public.appspot.com
 

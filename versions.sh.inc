@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # sources 
-export WEAVIATE_HELM_CHART_VERSION=gcpm4
+export WEAVIATE_HELM_CHART_VERSION=gcpm6
 
 # targets
 export TARGET_VERSION=0.22.1

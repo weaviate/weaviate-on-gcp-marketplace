@@ -49,6 +49,7 @@ x-google-marketplace:
         weaviate.elasticsearch.imageTag:
           type: TAG
     ubbagent:
+      default: gcr.io/cloud-marketplace-tools/metering/ubbagent:latest
       properties:
         weaviate.marketplace.ubbagentImage:
           type: FULL
