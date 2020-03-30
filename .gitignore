@@ -1,2 +1,2 @@
-chart/weaviate-on-gke/charts
-chart/weaviate-on-gke/values.yaml
+chart/weaviate-enterprise/charts
+chart/weaviate-enterprise/values.yaml
