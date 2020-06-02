@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # sources 
 export WEAVIATE_HELM_CHART_VERSION=gcpm11
 
