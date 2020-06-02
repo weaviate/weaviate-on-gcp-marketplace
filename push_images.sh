@@ -5,14 +5,15 @@ set -euo pipefail
 source versions.sh.inc
 
 # the target tag will be used for every image, as is required from gcp marketplace
-target_tag="$TARGET_IMAGE_VERSION"
-target_tag_full="$TARGET_VERSION"
+target_tag="$TARGET_IMAGE_VERSION"     # short version, e.g. 0.22
+target_tag_full="$TARGET_VERSION"      # long version, e.g. 0.22.7
+weaviate_source_tag="$TARGET_VERSION"  # source must always match long version
 target_repo_base="$TARGET_REPO_BASE"
 
 function main() {
   ## weaviate image
   weaviate_source_registry=docker.io
-  weaviate_source_tag=0.22.1
+  weaviate_source_tag="$weaviate_source_tag"
   weaviate_source_repo=semitechnologies/weaviate
   weaviate_target_repo="$target_repo_base"
 

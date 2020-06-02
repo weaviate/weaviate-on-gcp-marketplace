@@ -6,13 +6,13 @@ x-google-marketplace:
   solutionId: weaviate-enterprise
   schemaVersion: v2
   applicationApiVersion: v1beta1
-  publishedVersion: '0.22.1'
+  publishedVersion: '0.22.7'
   publishedVersionMetadata:
     releaseTypes:
       - Feature
     recommended: false
     releaseNote: >-
-      See https://github.com/semi-technologies/weaviate/releases/tag/0.22.1 for full release notes.
+      See https://github.com/semi-technologies/weaviate/releases/tag/0.22.7 for full release notes.
 
   managedUpdates:
     kalmSupported: false
