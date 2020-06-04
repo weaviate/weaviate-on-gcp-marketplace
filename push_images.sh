@@ -9,6 +9,7 @@ target_tag="$TARGET_IMAGE_VERSION"     # short version, e.g. 0.22
 target_tag_full="$TARGET_VERSION"      # long version, e.g. 0.22.7
 weaviate_source_tag="$SOURCE_VERSION"  # source must always match long version, but can be a different version (unfortunately)
 target_repo_base="$TARGET_REPO_BASE"
+c11y_version="$CONTEXTIONARY_VERSION"
 
 function main() {
   ## weaviate image
@@ -23,7 +24,7 @@ function main() {
   languages="en nl de it cs"
   for lang in $languages; do
     c11y_source_registry=docker.io
-    c11y_source_tag="${lang}0.13.0-v0.4.7"
+    c11y_source_tag="${lang}${c11y_version}"
     c11y_source_repo="semitechnologies/contextionary"
     c11y_target_repo="$target_repo_base/contextionary-${lang}"
 
