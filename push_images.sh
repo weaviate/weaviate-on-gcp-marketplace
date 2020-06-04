@@ -7,7 +7,7 @@ source versions.sh.inc
 # the target tag will be used for every image, as is required from gcp marketplace
 target_tag="$TARGET_IMAGE_VERSION"     # short version, e.g. 0.22
 target_tag_full="$TARGET_VERSION"      # long version, e.g. 0.22.7
-weaviate_source_tag="$TARGET_VERSION"  # source must always match long version
+weaviate_source_tag="$SOURCE_VERSION"  # source must always match long version, but can be a different version (unfortunately)
 target_repo_base="$TARGET_REPO_BASE"
 
 function main() {
@@ -38,12 +38,19 @@ function main() {
 
   repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
 
-  esvector_source_registry=docker.io
-  esvector_source_tag=3.3.13-debian-9-r30
-  esvector_source_repo=bitnami/etcd
-  esvector_target_repo="$target_repo_base/etcd"
+  etcd_source_registry=docker.io
+  etcd_source_tag=3.3.13-debian-9-r30
+  etcd_source_repo=bitnami/etcd
+  etcd_target_repo="$target_repo_base/etcd"
 
-  repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
+  repush "$etcd_source_registry" "$etcd_source_repo" "$etcd_source_tag" "$etcd_target_repo"
+
+  ubbagent_source_registry=gcr.io
+  ubbagent_source_tag=latest
+  ubbagent_source_repo=cloud-marketplace-tools/metering/ubbagent
+  ubbagent_target_repo="$target_repo_base/ubbagent"
+
+  repush "$ubbagent_source_registry" "$ubbagent_source_repo" "$ubbagent_source_tag" "$ubbagent_target_repo"
 
   build_and_push_smoke_tests
 }
