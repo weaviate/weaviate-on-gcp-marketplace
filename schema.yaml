@@ -72,6 +72,15 @@ properties:
     default: dummysecret
     x-google-marketplace:
       type: REPORTING_SECRET
+  weaviate.marketplace.planSelectionEnum:
+    type: string
+    title: Plan Selection
+    description: "Choose the Weaviate Subscription plan. Each plan comes with a different level of support."
+    enum:
+    - 'Weaviate Startup'
+    - 'Weaviate Scaleup'
+    - 'Weaviate Professional'
+    - 'Weaviate Enterprise'
   contextionaryLanguage:
     type: string
     title: Contextionary Language

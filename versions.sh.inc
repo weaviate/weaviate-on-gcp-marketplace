@@ -2,11 +2,11 @@
 
 
 # sources 
-export WEAVIATE_HELM_CHART_VERSION=gcpm13
+export WEAVIATE_HELM_CHART_VERSION=gcpm15
 
 # targets
-export SOURCE_VERSION=0.22.7
-export TARGET_VERSION=0.22.8
+export SOURCE_VERSION=0.22.12
+export TARGET_VERSION=0.22.12
 export TARGET_IMAGE_VERSION="$(echo $TARGET_VERSION | cut -d'.' -f1).$(echo $TARGET_VERSION | cut -d'.' -f2)"
 echo "Version:"
 echo "$TARGET_IMAGE_VERSION ($TARGET_VERSION)"

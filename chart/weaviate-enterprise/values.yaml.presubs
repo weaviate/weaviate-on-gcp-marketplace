@@ -27,5 +27,5 @@ weaviate:
     ubbagentImage: "overwrite_me"
     reportingSecretName: "overwrite_me"
     serviceName: weaviate-enterprise.mp-semi-marketplace-public.appspot.com
-    metricName: "weaviate_startup"
+    planSelectionEnum: "overwrite_me"
 
