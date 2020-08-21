@@ -1,27 +1,29 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-  name: "{{ .Release.Name }}"
-  namespace: "{{ .Release.Namespace }}"
+  name: '{{ .Release.Name }}'
+  namespace: '{{ .Release.Namespace }}'
   labels:
-    app.kubernetes.io/name: "{{ .Release.Name }}"
+    app.kubernetes.io/name: '{{ .Release.Name }}'
   annotations:
+    kubernetes-engine.cloud.google.com/icon: >-
+      data:image/png;base64,{{ .Files.Get "logo.png" | b64enc }}
     marketplace.cloud.google.com/deploy-info: '{"partner_id": "semi-marketplace-public", "product_id": "weaviate-enterprise", "partner_name": "SeMI Technologies B.V."}'
 spec:
   descriptor:
     type: Weaviate
-    version: "{{ .Values.Version }}"
+    version: '{{ .Values.Version }}'
   selector:
     matchLabels:
-      app.kubernetes.io/name: "{{ .Release.Name }}"
+      app.kubernetes.io/name: '{{ .Release.Name }}'
   componentKinds:
-  - group: batch/v1
-    kind: Job
-  - group: apps/v1beta1
-    kind: StatefulSet
-  - group: apps/v1beta1
-    kind: Deployment
-  - group: v1
-    kind: PersistentVolumeClaim
-  - group: v1
-    kind: Service
+    - group: batch/v1
+      kind: Job
+    - group: apps/v1beta1
+      kind: StatefulSet
+    - group: apps/v1beta1
+      kind: Deployment
+    - group: v1
+      kind: PersistentVolumeClaim
+    - group: v1
+      kind: Service

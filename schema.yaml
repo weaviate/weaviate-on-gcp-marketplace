@@ -6,7 +6,7 @@ x-google-marketplace:
   solutionId: weaviate-enterprise
   schemaVersion: v2
   applicationApiVersion: v1beta1
-  publishedVersion: '0.22.14'
+  publishedVersion: '0.22.15'
   publishedVersionMetadata:
     releaseTypes:
       - Feature
@@ -57,7 +57,6 @@ x-google-marketplace:
         weaviate.marketplace.ubbagentImage:
           type: FULL
 
-
 properties:
   name:
     type: string
@@ -75,20 +74,20 @@ properties:
   weaviate.marketplace.planSelectionEnum:
     type: string
     title: Plan Selection
-    description: "Choose the Weaviate Subscription plan. Each plan comes with a different level of support."
+    description: 'Choose the Weaviate Subscription plan. Each plan comes with a different level of support.'
     enum:
-    - 'Weaviate Open Source'
-    - 'Weaviate Premium'
-    - 'Weaviate Professional'
-    - 'Weaviate Enterprise'
+      - 'Weaviate Open Source'
+      - 'Weaviate Premium'
+      - 'Weaviate Professional'
+      - 'Weaviate Enterprise'
   contextionaryLanguage:
     type: string
     title: Contextionary Language
-    description: "Weaviate comes with a pre-trained ML-model to build the vector space called the \"contextionary\". The contextionary is language-specific."
+    description: 'Weaviate comes with a pre-trained ML-model to build the vector space called the "contextionary". The contextionary is language-specific.'
     enum:
-    - 'English'
+      - 'English'
 
 required:
-- name
-- namespace
-- contextionaryLanguage
+  - name
+  - namespace
+  - contextionaryLanguage
