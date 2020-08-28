@@ -6,7 +6,7 @@ x-google-marketplace:
   solutionId: weaviate-enterprise
   schemaVersion: v2
   applicationApiVersion: v1beta1
-  publishedVersion: '0.22.15'
+  publishedVersion: '0.22.16'
   publishedVersionMetadata:
     releaseTypes:
       - Feature
