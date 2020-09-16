@@ -6,16 +6,16 @@ x-google-marketplace:
   solutionId: weaviate-enterprise
   schemaVersion: v2
   applicationApiVersion: v1beta1
-  publishedVersion: '0.22.16'
+  publishedVersion: '0.22.17'
   publishedVersionMetadata:
     releaseTypes:
       - Feature
     recommended: false
     releaseNote: >-
-      Underlying Weaviate version is 0.22.14, possbily a different published version is due
+      Underlying Weaviate version is 0.22.16, possbily a different published version is due
       to GCP Marketplace restrictions of not being able to update the deploy
       scripts without increasing the version number.
-      See https://github.com/semi-technologies/weaviate/releases/tag/0.22.14 for full release notes.
+      See https://github.com/semi-technologies/weaviate/releases/tag/0.22.16 for full release notes.
 
   managedUpdates:
     kalmSupported: false
