@@ -21,7 +21,7 @@ function main() {
   repush "$weaviate_source_registry" "$weaviate_source_repo" "$weaviate_source_tag" "$weaviate_target_repo"
 
   ## contextionary once for each language
-  languages="en nl de it cs"
+  languages="en"
   for lang in $languages; do
     c11y_source_registry=docker.io
     c11y_source_tag="${lang}${c11y_version}"
