@@ -1,4 +1,4 @@
-<h1>Weaviate GCP Marketplace Deployment <img alt='Weaviate logo' src='https://raw.githubusercontent.com/semi-technologies/weaviate/19de0956c69b66c5552447e84d016f4fe29d12c9/docs/assets/weaviate-logo.png' width='52' align='right' /></h1>
+<h1>Weaviate GCP Marketplace Application <img alt='Weaviate logo' src='https://raw.githubusercontent.com/semi-technologies/weaviate/19de0956c69b66c5552447e84d016f4fe29d12c9/docs/assets/weaviate-logo.png' width='52' align='right' /></h1>
 
 [![Build Status](https://api.travis-ci.org/semi-technologies/weaviate-on-gcp-marketplace.svg?branch=master)](https://travis-ci.org/semi-technologies/weaviate-on-gcp-marketplace/branches)
 
