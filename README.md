@@ -16,6 +16,8 @@ Below are some resources to help developers extend and maintain this repository
 
 * Our [Helm Chart](https://github.com/semi-technologies/weaviate-helm-gcp-marketplace) used in this Marketplace Application. Note that the helm chart is a fork of the common Helm chart, as it needs to integrate Marketplace-specific instructions.
 * A [reference to the Helm Chart version](https://github.com/semi-technologies/weaviate-on-gcp-marketplace/blob/b44fd633fe9a8fd1ba330d342304ca410620db94/versions.sh.inc#L5) used in this application.
+* A [reference to the Weaviate version](https://github.com/semi-technologies/weaviate-on-gcp-marketplace/blob/0da2e180ed8c596ec7f919cb44e5b5436fd6d560/versions.sh.inc#L8) used.
+* A [reference to the the Contextionary version](https://github.com/semi-technologies/weaviate-on-gcp-marketplace/blob/0da2e180ed8c596ec7f919cb44e5b5436fd6d560/versions.sh.inc#L16) used.
 * This [application's `schema.yaml`](https://github.com/semi-technologies/weaviate-on-gcp-marketplace/blob/master/schema.yaml)
 
 ### GCP-Marketplace Documentation
