@@ -23,6 +23,7 @@ Below are some resources to help developers extend and maintain this repository
 ### GCP-Marketplace Documentation
 * Build a [Helm-based Deployer Image](https://github.com/GoogleCloudPlatform/marketplace-k8s-app-tools/blob/master/docs/building-deployer-helm.md)
 * [schema.yaml Properties Explanations](https://github.com/GoogleCloudPlatform/marketplace-k8s-app-tools/blob/master/docs/schema.md#properties) 
+* [`mpdev` tool](https://github.com/GoogleCloudPlatform/marketplace-k8s-app-tools/blob/master/docs/mpdev-references.md) if you want to test/run the application "locally"
 
 ### How to make a release
 
