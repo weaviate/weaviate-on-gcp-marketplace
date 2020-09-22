@@ -38,3 +38,21 @@ Below are some resources to help developers extend and maintain this repository
 10. Click "Save" on all dialogs until you are back at the main menu
 11. Click "Submit for Review"
 
+### Run the setup locally
+1. Run pipeline so images are pushed
+2. Setup and configure any GKE Kubernetes Cluster
+3. Install custom resource, so cluster supports Applications: 
+  ```
+  kubectl apply -f "https://raw.githubusercontent.com/GoogleCloudPlatform/marketplace-k8s-app-tools/master/crd/app-crd.yaml"
+
+  ```
+4. Deploy application with 
+   ```
+   mpdev install \
+    --deployer=gcr.io/semi-marketplace-dev/weaviate-on-gke/deployer:0.22.17 \
+    --parameters='{"name": "test-deployment", "namespace": "test-ns",
+      "weaviate.marketplace.planSelectionEnum": "Weaviate Open Source",
+      "contextionaryLanguage": "English"}'
+   ```
+
+
