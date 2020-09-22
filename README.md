@@ -8,9 +8,9 @@ You can install the Weaviate Marketplace deployment directly from the [Google Cl
 
 Additional instructions can be found in the [documentation](https://www.semi.technology/documentation/weaviate/current/getting-started/installation.html#cloud-deployment).
 
-## For Developers
+## For Contributors to this application
 
-Below are some resources to help developers extend and maintain this repisitory
+Below are some resources to help developers extend and maintain this repository
 
 ### Resources as part of this application
 
