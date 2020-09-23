@@ -2,7 +2,7 @@
 
 
 # sources 
-export WEAVIATE_HELM_CHART_VERSION=gcpm16
+export WEAVIATE_HELM_CHART_VERSION=gcpm17
 
 # targets
 export SOURCE_VERSION=0.22.16

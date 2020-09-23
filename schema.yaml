@@ -99,7 +99,7 @@ properties:
     description: 'How often is the etcd pod replicated. Max number must be less or equal to the number of nodes in the cluster.'
     default: 3
 
-  weaviate.esvector.replicas:
+  weaviate.elasticsearch.replicas:
     type: integer
     title: Replica count of elastic pods
     description: 'How often is the elastic pod replicated.'
@@ -145,7 +145,7 @@ properties:
   weaviate.custom_config_map.enabled:
     type: boolean
     title: Custom config map enabled
-    description: 'If true weaviate will assume a custom config map at startup. This needs to be deployed manually.'
+    description: 'If true weaviate will assume a custom config map at startup.'
     default: false
   weaviate.custom_config_map.name:
     type: string
