@@ -142,6 +142,18 @@ properties:
     description: 'The type of the service created for weaviate in k8s.'
     default: "LoadBalancer"
 
+  weaviate.custom_config_map.enabled:
+    type: boolean
+    title: Custom config map enabled
+    description: 'If true weaviate will assume a custom config map at startup. This needs to be deployed manually.'
+    default: false
+  weaviate.custom_config_map.name:
+    type: string
+    title: Custom config map name
+    description: 'Name of the configmap that should be used for weaviate. Only has an effect if custom config map is enabled.'
+    default: "custom-config"
+    
+
 
 required:
   - name
