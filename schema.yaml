@@ -92,7 +92,6 @@ properties:
     title: Disaster recovery for etcd activated
     description: 'If true etcd will store backups on an nfs storage to recover if more than half of the nodes fail.'
     default: false
-
   weaviate.etcd.statefulset.replicaCount:
     type: integer
     title: Replica count of etcd pods
@@ -105,27 +104,27 @@ properties:
     description: 'How often is the elastic pod replicated.'
     default: 3
 
-  weaviate.esvector.resources.requests.cpu:
+  weaviate.elasticsearch.resources.requests.cpu:
     type: string
     title: Requested CPU resources of elastic pods
     description: 'Defines how much CPU time each elastic pod is requesting initially, e.g. 400m.'
     default: "400m"
-  weaviate.esvector.resources.requests.memory:
+  weaviate.elasticsearch.resources.requests.memory:
     type: string
     title: Requested memory resources of elastic pods
     description: 'Defines how much memory each elastic pod is requesting initially, e.g. 8Gi'
     default: "8Gi"
-  weaviate.esvector.resources.limits.cpu:
+  weaviate.elasticsearch.resources.limits.cpu:
     type: string
     title: Limited CPU resources of elastic pods
     description: 'Defines how much CPU time each elastic pod is limited to, e.g. 400m.'
     default: "4000m"
-  weaviate.esvector.resources.limits.memory:
+  weaviate.elasticsearch.resources.limits.memory:
     type: string
     title: Limited CPU memory resources of elastic pods
     description: 'Defines how much memory each elastic pod is limited to, e.g. 8Gi'
     default: "8Gi"
-  weaviate.esvector.esJavaOpts:
+  weaviate.elasticsearch.esJavaOpts:
     type: string
     title: Elastic search java options
     description: 'Configurating the java options especially the heap size. It should be around 50% of the available memory. e.g. -Xmx4g -Xms4g for 8Gi of memory.'
