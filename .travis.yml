@@ -2,7 +2,6 @@ dist: xenial
 language: shell
 jobs:
   include:
-
   - stage: dev
     env:
       GCP_PROJECT: semi-marketplace-dev
@@ -24,12 +23,9 @@ jobs:
     - "./download_weaviate_chart.sh || travis_terminate 1"
     - "./build_values_yaml.sh || travis_terminate 1"
     - "./build_deployer.sh || travis_terminate 1"
-
-
 cache:
   directories:
   - "$HOME/google-cloud-sdk/"
-
 before_install:
 - gcloud version || true
 - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export
@@ -40,6 +36,9 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_7d2533dde7d2_key -iv $encrypted_7d2533dde7d2_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar -xf secrets.tar
-
 after_failure:
 - "./delete_all_clusters.sh"
+env:
+  global:
+  - secure: gNM1h1Sora5tr4har6OuOalBWs/r+d5fuqaQvbSy+iInSZLUgzXoM9xawdr5eS2xGEHOC3XJNTZZIvQY1iAVSQYfjIveEgCOPj8qho0tU55ZY/TMe3JmV6SZ/SkmUv4f7Bd3al7KbUloGEVyduzLbU4O8CPDfx+LN/lg2Nvbm9Xvxi2PUM0zpNSGH5lZKIFp8SjtlcRFSzNBMGc9xl1EKo1AYSBDdicoGcqgXZw64+PG2FNuREXBY69Ku7AClMnkAhFb6fJXMoVTZoZwW5ePkZ1jBix4CwUToMGLn1QGFqIgc1V/XDCXTmHOx7GouSJRBrTNv7N6RtPC6/28spzuM0TEDnL2QcIIAKGeH5dJNTO0eQiYydZRw6In9s5dYIwL0t3n5AUUA1JJB2E736OtPMy4w3zbHhmHUYUVGyjD5Hm75ioqQrVGWw8EgrDktXBEeSLB6pzk+jHpno/byglE3KiRvl1qhoIzSV5hSDcjHilqEiXAYEvfY7w7hN5Oje7sNOR9mgBsTOJ/8YPusKZ2PYa4ybGb4Mi3rH0AWxLdhtgTxS9umeSYNXE6sOel1oWvybt5/W9hXuMj7ccDvOX32CTiL8uw/0FYVDZRe5l/ETuADUukJEPvoZ4V+yRN19QH2DIeuRpQTbDbo+IPhj1Fd+njjf12EH49ZGImfO3PRJI=
+  - secure: Pra4i/2/TJ/FXHP7PFoVyqMc0RmM8h4GXQxXbVqtGub0i6ZECYXK9kdA6ExxAMUSez1uyGFuYfapvNv8iYI/GWgQ44r0fJ6fMKjYAk7iJjdHFmJA1FAyQvRO3dlRAPjXgpT2ai1+Lpsb8NBRc1UO0s4yaTX9BnfHj6wchmknlXFGmqrmU8NV6t3eX2SOYnkqX4s9lBQvmkislm4Hmvlk/X8ZQbWMV+/d16iu8deCEYYtRaN3d+MT1KVDkFD0zwpdDsS6NWGfHHhRs7JmibVa5ferq2X369nwU2SjctWVqOsBIwe5TkmM+x7V6hCmckVYoM7Qn5UgvM1R0YMKltenASyqUXA4afPSibyBT/SP8wdzBymlmgIF6BAYB3cpT1oIhTnOI2v76uBHhaCdwUhGNFuN+tTaorvpR2D6k8lBZEN3lELzeFnXgcc/8WwY6p9JfUN/TkJGH3H1SHno15s7BAlMrDLBEgcqLJ/lz3fQjp75IQH2ME6gckKtXhSRlTYnb9voeXdrV5kQOFx67n3HrWJ0jAuRa8sl4Di9ervA6YMu1we0YMqM7a85wdNlG0sXrlCSJkCX6UD0H2rCHMIc1EohE6VLUELBt/9JU4R6C+hNE/kKqwdmiRfpcuhGHLDzhuhleiztZLkOLvj2hPftb/iLQQOS11rIhJDxYAoqRQc=

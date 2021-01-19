@@ -12,6 +12,9 @@ target_repo_base="$TARGET_REPO_BASE"
 c11y_version="$CONTEXTIONARY_VERSION"
 
 function main() {
+  ## log in to dockerhub io registry to avoid being rate limited
+  echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+
   ## weaviate image
   weaviate_source_registry=docker.io
   weaviate_source_tag="$weaviate_source_tag"
