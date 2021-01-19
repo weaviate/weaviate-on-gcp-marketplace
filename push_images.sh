@@ -13,7 +13,7 @@ c11y_version="$CONTEXTIONARY_VERSION"
 
 function main() {
   ## log in to dockerhub io registry to avoid being rate limited
-  echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+  # echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
 
   ## weaviate image
   weaviate_source_registry=docker.io
@@ -33,21 +33,6 @@ function main() {
 
     repush "$c11y_source_registry" "$c11y_source_repo" "$c11y_source_tag" "$c11y_target_repo"
   done
-
-  ## esvector
-  esvector_source_registry=docker.io
-  esvector_source_tag=7.1.0
-  esvector_source_repo=semitechnologies/esvector
-  esvector_target_repo="$target_repo_base/esvector"
-
-  repush "$esvector_source_registry" "$esvector_source_repo" "$esvector_source_tag" "$esvector_target_repo"
-
-  etcd_source_registry=docker.io
-  etcd_source_tag=3.3.13-debian-9-r30
-  etcd_source_repo=bitnami/etcd
-  etcd_target_repo="$target_repo_base/etcd"
-
-  repush "$etcd_source_registry" "$etcd_source_repo" "$etcd_source_tag" "$etcd_target_repo"
 
   ubbagent_source_registry=gcr.io
   ubbagent_source_tag=latest
