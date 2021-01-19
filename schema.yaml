@@ -6,16 +6,16 @@ x-google-marketplace:
   solutionId: weaviate-enterprise
   schemaVersion: v2
   applicationApiVersion: v1beta1
-  publishedVersion: '0.22.18'
+  publishedVersion: '1.0.0'
   publishedVersionMetadata:
     releaseTypes:
       - Feature
     recommended: false
     releaseNote: >-
-      Underlying Weaviate version is 0.22.16, possbily a different published version is due
+      Underlying Weaviate version is v1.0.3, possbily a different published version is due
       to GCP Marketplace restrictions of not being able to update the deploy
       scripts without increasing the version number.
-      See https://github.com/semi-technologies/weaviate/releases/tag/0.22.16 for full release notes.
+      See https://github.com/semi-technologies/weaviate/releases/tag/v1.0.3 for full release notes.
 
   managedUpdates:
     kalmSupported: false
@@ -36,20 +36,6 @@ x-google-marketplace:
         weaviate.contextionary.registry:
           type: REGISTRY
         weaviate.contextionary.tag:
-          type: TAG
-    etcd:
-      properties:
-        weaviate.etcd.image.repository:
-          type: REPO_WITHOUT_REGISTRY
-        weaviate.etcd.image.registry:
-          type: REGISTRY
-        weaviate.etcd.image.tag:
-          type: TAG
-    esvector:
-      properties:
-        weaviate.elasticsearch.image:
-          type: REPO_WITH_REGISTRY
-        weaviate.elasticsearch.imageTag:
           type: TAG
     ubbagent:
       default: gcr.io/cloud-marketplace-tools/metering/ubbagent:latest
@@ -87,49 +73,6 @@ properties:
     enum:
       - 'English'
 
-  weaviate.etcd.disasterRecovery.enabled:
-    type: boolean
-    title: Disaster recovery for etcd activated
-    description: 'If true etcd will store backups on an nfs storage to recover if more than half of the nodes fail.'
-    default: false
-  weaviate.etcd.statefulset.replicaCount:
-    type: integer
-    title: Replica count of etcd pods
-    description: 'How often is the etcd pod replicated. Max number must be less or equal to the number of nodes in the cluster.'
-    default: 3
-
-  weaviate.elasticsearch.replicas:
-    type: integer
-    title: Replica count of elastic pods
-    description: 'How often is the elastic pod replicated.'
-    default: 3
-
-  weaviate.elasticsearch.resources.requests.cpu:
-    type: string
-    title: Requested CPU resources of elastic pods
-    description: 'Defines how much CPU time each elastic pod is requesting initially, e.g. 400m.'
-    default: "400m"
-  weaviate.elasticsearch.resources.requests.memory:
-    type: string
-    title: Requested memory resources of elastic pods
-    description: 'Defines how much memory each elastic pod is requesting initially, e.g. 8Gi'
-    default: "8Gi"
-  weaviate.elasticsearch.resources.limits.cpu:
-    type: string
-    title: Limited CPU resources of elastic pods
-    description: 'Defines how much CPU time each elastic pod is limited to, e.g. 400m.'
-    default: "4000m"
-  weaviate.elasticsearch.resources.limits.memory:
-    type: string
-    title: Limited CPU memory resources of elastic pods
-    description: 'Defines how much memory each elastic pod is limited to, e.g. 8Gi'
-    default: "8Gi"
-  weaviate.elasticsearch.esJavaOpts:
-    type: string
-    title: Elastic search java options
-    description: 'Configurating the java options especially the heap size. It should be around 50% of the available memory. e.g. -Xmx4g -Xms4g for 8Gi of memory.'
-    default: "-Xmx4g -Xms4g"
-  
   weaviate.service.name:
     type: string
     title: Weaviate service name
