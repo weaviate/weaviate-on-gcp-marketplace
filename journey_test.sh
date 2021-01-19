@@ -7,7 +7,7 @@ source versions.sh.inc
 cluster_id=$(openssl rand -base64 15 | tr -dc '[:alnum:]' | tr '[:upper:]' '[:lower:]')
 
 gcloud container clusters create "test-$cluster_id" --zone=europe-west3-a \
-  --num-nodes=3 --machine-type=n1-standard-2 --cluster-version=1.14
+  --num-nodes=1 --machine-type=n1-standard-2 --cluster-version=1.14
 
 gcloud container clusters get-credentials "test-$cluster_id" --zone=europe-west3-a
 
