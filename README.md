@@ -6,7 +6,7 @@
 
 You can install the Weaviate Marketplace deployment directly from the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/details/semi-marketplace-public/weaviate).
 
-Additional instructions can be found in the [documentation](https://www.semi.technology/documentation/weaviate/current/getting-started/installation.html#cloud-deployment).
+Additional instructions can be found in the [documentation](https://weaviate.io/developers/weaviate/current/getting-started/installation.html#cloud-deployment).
 
 ## For Contributors to this application
 
